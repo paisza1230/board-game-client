@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .card {
+            display: inline-block;
+            width: 150px;
+            height: 200px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            font-size: 48px;
+            line-height: 200px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Random Card Generator</h1>
+<button onclick="generateCard()">Draw Card</button>
+<div id="card" class="card"></div>
+
+<script>
+    function generateCard() {
+        const number = Math.floor(Math.random() * 10) + 1;
+        const colors = ['yellow', 'red', 'cyan'];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+
+        const card = document.getElementById('card');
+        card.textContent = number;
+        card.style.backgroundColor = color;
+    }
+</script>
+
+</body>
+</html>
